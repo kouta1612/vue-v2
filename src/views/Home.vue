@@ -9,7 +9,10 @@
 export default {
     methods: {
         toUsers() {
-            this.$router.push({ path: 'users' })
+            this.$router.push({
+                name: 'user-profile',
+                params: { 'id': 1 }
+            })
         }
     }
 }

@@ -9,5 +9,13 @@ export default new Vuex.Store({
     },
     getters: {
         doubleCount: state => state.count * 2
+    },
+    mutations: {
+        increment(store, number) {
+            store.count += number;
+        },
+        decrement(store, number) {
+            store.count -= number;
+        }
     }
 })

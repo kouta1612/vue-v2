@@ -30,14 +30,14 @@ export default {
   },
   created() {
     axios.get(
-      'https://firestore.googleapis.com/v1/projects/vuejs-http-25e2b/databases/(default)/documents/comments'
+      '/comments'
     ).then(response => {
       this.posts = response.data.documents;
     });
   },
   methods: {
     createComment() {
-      axios.post('https://firestore.googleapis.com/v1/projects/vuejs-http-25e2b/databases/(default)/documents/comments',
+      axios.post('/comments',
       {
         fields: {
           name: {

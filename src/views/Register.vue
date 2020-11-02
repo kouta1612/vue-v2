@@ -12,7 +12,9 @@
 </template>
 
 <script>
-export default {
+import axios from '../axios-auth';
+
+export default { 
   data() {
     return {
       email: "",
@@ -21,7 +23,14 @@ export default {
   },
   methods: {
       register() {
-          
+          axios.post(
+              '/accounts:signInWithCustomToken?key=AIzaSyChAM2pUX-vaU3MZx-Hf75Afs7buf5d2kM',
+              {
+                  email: this.email,
+                  password: this.password,
+                  
+              }
+            )
       }
   }
 }

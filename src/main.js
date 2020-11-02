@@ -4,6 +4,10 @@ import router from './router';
 import store from './store';
 import axios from "axios";
 
+Vue.config.productionTip = false;
+
+
+
 axios.defaults.baseURL = 
     "https://firestore.googleapis.com/v1/projects/vuejs-http-25e2b/databases/(default)/documents";
 
@@ -23,8 +27,6 @@ axios.interceptors.response.use(
         return Promise.reject(error);
     }
 )
-
-Vue.config.productionTip = false;
 
 new Vue({
     router,

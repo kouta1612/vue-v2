@@ -4,7 +4,9 @@ import router from './router';
 import store from './store';
 import axios from "axios";
 
-axios.defaults.baseURL = "https://firestore.googleapis.com/v1/projects/vuejs-http-25e2b/databases/(default)/documents"
+axios.defaults.baseURL = 
+    "https://firestore.googleapis.com/v1/projects/vuejs-http-25e2b/databases/(default)/documents";
+
 axios.interceptors.request.use(
     config => {
         return config;

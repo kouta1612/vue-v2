@@ -24,13 +24,15 @@ export default {
   methods: {
       register() {
           axios.post(
-              '/accounts:signInWithCustomToken?key=AIzaSyChAM2pUX-vaU3MZx-Hf75Afs7buf5d2kM',
+              '/accounts:signUp?key=AIzaSyChAM2pUX-vaU3MZx-Hf75Afs7buf5d2kM',
               {
                   email: this.email,
                   password: this.password,
-                  
+                  returnSecureToken: true
               }
-            )
+          ).then(response => {
+            console.log(response);
+          })
       }
   }
 }

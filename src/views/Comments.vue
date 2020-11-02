@@ -6,6 +6,7 @@
     <br><br>
     <label for="comment">コメント</label>
     <textarea name="" id="comment" v-model="comment"></textarea>
+    <br><br>
     <button @click="createComment">コメントをサーバーに送る</button>
     <h2>掲示板</h2>
     <div v-for="post in posts" :key="post.name">

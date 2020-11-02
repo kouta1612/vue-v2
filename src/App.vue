@@ -29,16 +29,13 @@ export default {
     }
   },
   created() {
-    axios.get(
-      '/comments'
-    ).then(response => {
+    axios.get('/comments').then(response => {
       this.posts = response.data.documents;
     });
   },
   methods: {
     createComment() {
-      axios.post('/comments',
-      {
+      axios.post('/comments', {
         fields: {
           name: {
             stringValue: this.name

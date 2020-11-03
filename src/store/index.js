@@ -50,6 +50,13 @@ export default new Vuex.Store({
                 router.push('/');
             })
          },
+         logout({ commit }) {
+            commit('updateIdToken', null);
+            localStorage.removeItem('idToken');
+            localStorage.removeItem('expiryTimeMs');
+            localStorage.removeItem('refreshToken');
+            router.replace('/login');
+         },
          async refreshIdToken({ dispatch }, refreshToken) {
             await axiosRefresh.post('/token?key=AIzaSyChAM2pUX-vaU3MZx-Hf75Afs7buf5d2kM', {
                 grant_type: 'refresh_token',
